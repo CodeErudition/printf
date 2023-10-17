@@ -26,6 +26,14 @@ int _printf(const char *format, ...)
 				{
 					char_cnt += print_str(va_arg(arg_list, char *));
 				}
+				else if (format[indx] == spec[0])
+				{
+					char_cnt += p_print();
+				}
+				else if (format[indx] == spec[3])
+				{
+					char_cnt += print_int(va_arg(arg_list, int));
+				}
 			}
 			else
 			{
