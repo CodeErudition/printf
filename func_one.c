@@ -32,3 +32,48 @@ int print_str(char *str)
 	}
 	return (cnt);
 }
+
+
+/**
+ * print_int - A functio that prints integer
+ *
+ * @n: integer to be printed
+ *
+ * Return: int (in this case the number of printed character)
+ */
+
+int print_int(int n)
+{
+	char c[12];
+	int j, i = 0, m, cnt = 1;
+
+	for (j = 0; j < 12; j++)
+	{
+		c[j] = '\0';
+	}
+	if (n < 0)
+	{
+		_putchar('-');
+		m = -n;
+	}
+	else
+	{
+		m = n;
+	}
+	while (m)
+	{
+		c[i] = m % 10 + '0';
+		m /= 10;
+		i++;
+	}
+	if (n == 0)
+	{
+		c[i] = '0';
+	}
+	cnt = i;
+	for (; i >= 0; i--)
+	{
+		_putchar(c[i]);
+	}
+	return (cnt);
+}
