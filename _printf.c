@@ -5,6 +5,7 @@ int _printf(const char *format, ...)
 	int indx = 0, char_cnt = 0;
 	va_list arg_list;
 	char spec[] = {'%', 'c', 's', 'd', 'i', 'x', 'X', 'u', 'o'};
+
 	va_start(arg_list, format);
 
 	if (!format || (format[0] == '%' && format[1] == '\0'))
@@ -43,5 +44,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(arg_list);
-	return char_cnt;
+	return (char_cnt);
 }
