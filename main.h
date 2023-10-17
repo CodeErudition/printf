@@ -8,11 +8,12 @@
 #include <stdlib.h>
 #include <limits.h>
 
-/* ============= PROTOTYPES (_printf)================== */
+/* PROTOTYPES (_printf) */
 
 int _printf(const char *format, ...);
 
-/* =================== Custom putchar, puts and other functions ================= */
+/* Custom putchar, puts and other functions */
+
 char _putchar(char c);
 int get_len(char *s);
 int print_char(int c);
