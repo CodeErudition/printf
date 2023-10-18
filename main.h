@@ -20,7 +20,7 @@ int print_char(int c);
 int print_str(char *str);
 int p_print(void);
 int print_int(int n);
-int print_binary(int n);
+int print_binary(unsigned int n);
 int print_unsigned(unsigned int n);
 int print_octal(unsigned int n);
 int print_hex(unsigned int n, int uppercase);
