@@ -1,5 +1,7 @@
 #include "main.h"
 
+
+
 int _printf(const char *format, ...)
 {
 	int indx = 0, char_cnt = 0;

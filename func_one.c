@@ -44,7 +44,7 @@ int print_str(char *str)
 
 int print_int(int n)
 {
-	char char c[12];;
+	cha c[12];;
 	int j, i = 0, m, cnt = 1;
 
 	for (j = 0; j < 12; j++)
@@ -75,6 +75,41 @@ int print_int(int n)
 	{
 		_putchar(c[i]);
 	}
-
 	return (cnt);
+}
+
+/**
+ * print_unsigned - A function that prints unsigned integer.
+ *
+ * @n: Integer to be printed.
+ *
+ * Return: int (in this case the number of printed charcters)
+ */
+
+int print_unsigned(unsigned int n)
+{
+	char c[12];
+	int cnt = 0;
+	int j, i = 0;
+	int forward = 0, backward;
+
+	while (n > 0)
+	{
+		c[i++] = n % 10 + '0';
+		n /= 10;
+	}
+	backward = i - 1;
+	while (forward < backward)
+	{
+		char temp = c[forward];
+		c[forward] = c[backward];
+		c[backward] = temp;
+		forward++;
+		backward--;
+	}
+	for (j = 0; j < i; j++)
+	{
+		cnt += _putchar(c[j]);
+	}
+	return cnt;
 }
