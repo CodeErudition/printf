@@ -44,7 +44,7 @@ int print_str(char *str)
 
 int print_int(int n)
 {
-	cha c[12];;
+	char c[12];
 	int j, i = 0, m, cnt = 1;
 
 	for (j = 0; j < 12; j++)
@@ -103,6 +103,7 @@ int print_unsigned(unsigned int n)
 	{
 		char temp = c[forward];
 		c[forward] = c[backward];
+
 		c[backward] = temp;
 		forward++;
 		backward--;
@@ -111,5 +112,5 @@ int print_unsigned(unsigned int n)
 	{
 		cnt += _putchar(c[j]);
 	}
-	return cnt;
+	return (cnt);
 }

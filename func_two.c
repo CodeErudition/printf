@@ -31,7 +31,7 @@ int print_octal(unsigned int n)
  * in upper or lowercase.
  *
  * @n: The unsigned integer to be printed in hexadecimal format.
- * @uppercase: If set to 1, print hexadecimal digits in uppercase (A-F); 
+ * @uppercase: If set to 1, print hexadecimal digits in uppercase (A-F);
  * if set to 0, print them in lowercase (a-f).
  *
  * Return: int (in this case the number of printed characters).
