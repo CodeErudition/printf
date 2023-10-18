@@ -95,6 +95,7 @@ int print_binary(unsigned int n)
  *
  * Return: integer
  */
+
 int p_print(void)
 {
     _putchar('%');
