@@ -102,6 +102,7 @@ int print_unsigned(unsigned int n)
 	while (forward < backward)
 	{
 		char temp = c[forward];
+
 		c[forward] = c[backward];
 
 		c[backward] = temp;
