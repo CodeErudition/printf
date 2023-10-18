@@ -27,13 +27,13 @@ void conditions(const char *format, va_list arg_list, int indx, int char_cnt)
 	else if (format[indx] == spec[3] || format[indx] == spec[4])
 		char_cnt += print_int(va_arg(arg_list, int));
 	else if (format[indx] == spec[7])
-		char_cnt += print_unsigned(va_arg(arg_list, unsigned int));
+		char_cnt += print_uint(va_arg(arg_list, Uint));
 	else if (format[indx] == spec[5])
-		char_cnt += print_hex(va_arg(arg_list, unsigned int), 0);
+		char_cnt += print_hex(va_arg(arg_list, Uint), 0);
 	else if (format[indx] == spec[6])
-		char_cnt += print_hex(va_arg(arg_list, unsigned int), 1);
+		char_cnt += print_hex(va_arg(arg_list, Uint), 1);
 	else if (format[indx] == spec[8])
-		char_cnt += print_octal(va_arg(arg_list, unsigned int));
+		char_cnt += print_octal(va_arg(arg_list, Uint));
 	else if (format[indx] == spec[9])
-		char_cnt += print_binary(va_arg(arg_list, unsigned int));
+		char_cnt += print_binary(va_arg(arg_list, Uint));
 }

@@ -8,7 +8,7 @@
  * Return: int (in this case the number of printed characters).
  */
 
-int print_octal(unsigned int n)
+int print_octal(Uint n)
 {
 	char *ptr = malloc(sizeof(int) * (n / 8));
 	int i = 0, j, cnt;
@@ -37,7 +37,7 @@ int print_octal(unsigned int n)
  * Return: int (in this case the number of printed characters).
  */
 
-int print_hex(unsigned int n, int uppercase)
+int print_hex(Uint n, int uppercase)
 {
 	char *hex = malloc(sizeof(int) * (n / 16));
 	int temp, i = 0, j, cnt, num;
@@ -64,16 +64,17 @@ int print_hex(unsigned int n, int uppercase)
 	return (cnt);
 }
 
-/*
+/**
  *  print_binary - Print an unsigned integer as
  * a binary number.
+ *
  * @n: The unsigned integer to be printed in binary.
  *
  * Return: The number of characters printed
  * (i.e., the binary length).
  */
 
-int print_binary(unsigned int n)
+int print_binary(Uint n)
 {
 	char *ptr = malloc(sizeof(int) * (n / 2));
 	int i = 0, j, cnt;
@@ -89,16 +90,4 @@ int print_binary(unsigned int n)
 		_putchar(ptr[j]);
 	free(ptr);
 	return (cnt);
-}
-
-/**
- * p_print - prints percent
- *
- * Return: integer
- */
-
-int p_print(void)
-{
-	_putchar('%');
-	return (1);
 }

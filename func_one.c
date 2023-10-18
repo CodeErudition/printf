@@ -33,9 +33,20 @@ int print_str(char *str)
 	return (cnt);
 }
 
+/**
+ * p_print - prints percent
+ *
+ * Return: integer
+ */
+
+int p_print(void)
+{
+	_putchar('%');
+	return (1);
+}
 
 /**
- * print_int - A functio that prints integer
+ * print_int - A function that prints integer
  *
  * @n: integer to be printed
  *
@@ -51,6 +62,7 @@ int print_int(int n)
 	{
 		c[j] = '\0';
 	}
+
 	if (n < 0)
 	{
 		_putchar('-');
@@ -60,33 +72,37 @@ int print_int(int n)
 	{
 		m = n;
 	}
+
 	while (m)
 	{
 		c[i] = m % 10 + '0';
 		m /= 10;
 		i++;
 	}
+
 	if (n == 0)
 	{
 		c[i] = '0';
 	}
+
 	cnt = i;
 	for (; i >= 0; i--)
 	{
 		_putchar(c[i]);
 	}
+
 	return (cnt);
 }
 
 /**
- * print_unsigned - A function that prints unsigned integer.
+ * print_uint - A function that prints unsigned integer.
  *
  * @n: Integer to be printed.
  *
  * Return: int (in this case the number of printed charcters)
  */
 
-int print_unsigned(unsigned int n)
+int print_uint(Uint n)
 {
 	char c[12];
 	int cnt = 0;
