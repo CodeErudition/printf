@@ -89,3 +89,14 @@ int print_binary(unsigned int n)
 	free(ptr);
 	return (cnt);
 }
+
+/**
+ * p_print - prints percent
+ *
+ * Return: integer
+ */
+int p_print(void)
+{
+    _putchar('%');
+    return (1);
+}
