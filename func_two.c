@@ -61,6 +61,31 @@ int print_hex(unsigned int n, int uppercase)
 	for (j = i - 1; j >= 0; j--)
 		_putchar(hex[j]);
 	free(hex);
+	return (cnt);
+}
 
+/* 
+ *  print_binary - Print an unsigned integer as
+ * a binary number.
+ * @n: The unsigned integer to be printed in binary.
+ *
+ * Return: The number of characters printed 
+ * (i.e., the binary length).
+ */
+
+int print_binary(unsigned int n)
+{
+	char *ptr = malloc(sizeof(int) * (n / 2));
+	int i = 0, j, cnt;
+	while (n ii!= 0)
+	{
+		ptr[i] = (n % 2) + '0';
+		n /= 2;
+		i++;
+	}
+	cnt = i;
+	for (j = i - 1; j >= 0; j--)
+		_putchar(ptr[j]);
+	free(ptr);
 	return (cnt);
 }
