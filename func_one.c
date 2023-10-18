@@ -44,7 +44,7 @@ int print_str(char *str)
 
 int print_int(int n)
 {
-	char c[12];
+	char char c[12];;
 	int j, i = 0, m, cnt = 1;
 
 	for (j = 0; j < 12; j++)
@@ -75,5 +75,6 @@ int print_int(int n)
 	{
 		_putchar(c[i]);
 	}
+
 	return (cnt);
 }
