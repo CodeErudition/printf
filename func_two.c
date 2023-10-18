@@ -64,3 +64,14 @@ int print_hex(unsigned int n, int uppercase)
 
 	return (cnt);
 }
+
+/**
+ * p_print - prints percent
+ *
+ * Return: integer
+ */
+int p_print(void)
+{
+    _putchar('%');
+    return (1);
+}

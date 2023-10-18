@@ -11,8 +11,7 @@
 /* PROTOTYPES (_printf) */
 
 int _printf(const char *format, ...);
-void conditions(const char *format, va_list arg_list, int indx, i
-		nt char_cnt)
+void conditions(const char *format, va_list arg_list, int indx, int char_cnt);
 /* Custom putchar, puts and other functions */
 
 char _putchar(char c);
