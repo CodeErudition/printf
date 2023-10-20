@@ -14,26 +14,34 @@
  * on the format specifier
  */
 
-void conditions(const char *format, va_list arg_list, int indx, int char_cnt)
+int conditions(const char format, va_list arg_list)
 {
+	int char_cnt = 0;
 	char spec[] = {'%', 'c', 's', 'd', 'i', 'x', 'X', 'u', 'o', 'b'};
 
-	if (format[indx] == spec[1])
+	if (format == spec[1])
 		char_cnt += _putchar(va_arg(arg_list, int));
-	else if (format[indx] == spec[2])
+	else if (format == spec[2])
 		char_cnt += print_str(va_arg(arg_list, char *));
-	else if (format[indx] == spec[0])
+	else if (format == spec[0])
 		char_cnt += p_print();
-	else if (format[indx] == spec[3] || format[indx] == spec[4])
+	else if (format == spec[3] || format == spec[4])
 		char_cnt += print_int(va_arg(arg_list, int));
-	else if (format[indx] == spec[7])
+	else if (format == spec[7])
 		char_cnt += print_uint(va_arg(arg_list, Uint));
-	else if (format[indx] == spec[5])
+	else if (format == spec[5])
 		char_cnt += print_hex(va_arg(arg_list, Uint), 0);
-	else if (format[indx] == spec[6])
+	else if (format == spec[6])
 		char_cnt += print_hex(va_arg(arg_list, Uint), 1);
-	else if (format[indx] == spec[8])
+	else if (format == spec[8])
 		char_cnt += print_octal(va_arg(arg_list, Uint));
-	else if (format[indx] == spec[9])
+	else if (format == spec[9])
 		char_cnt += print_binary(va_arg(arg_list, Uint));
+	else
+	{
+		_putchar('%');
+		_putchar(format);
+		char_cnt += 2;
+	}
+	return (char_cnt);
 }

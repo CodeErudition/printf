@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 
 	va_start(arg_list, format);
 
-	if (!format || (format[0] == '%' && format[1] == '\0'))
+	if (!format)
 	{
 		va_end(arg_list);
 		return (-1);
@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 			if (format[indx] == '%')
 			{
 				indx++;
-				conditions(format, arg_list, indx, char_cnt);
+				conditions(format[indx], arg_list);
 			}
 			else
 				char_cnt += _putchar(format[indx]);

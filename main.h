@@ -11,7 +11,7 @@
 typedef unsigned int Uint;
 /* PROTOTYPES (_printf) */
 int _printf(const char *format, ...);
-void conditions(const char *format, va_list arg_list, int indx, int char_cnt);
+int conditions(const char format, va_list arg_list);
 
 /* Custom putchar, puts and other functions */
 char _putchar(char c);
