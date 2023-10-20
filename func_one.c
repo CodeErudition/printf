@@ -58,18 +58,14 @@ int p_print(void)
 
 int print_int(int n)
 {
-	char c[12];
-	int j, i = 0, m, cnt = 1;
-
-	for (j = 0; j < 12; j++)
-	{
-		c[j] = '\0';
-	}
+	char *c = malloc(sizeof(int) * log10(n) + 1);
+	int j, i = 0, m, cnt = 0;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		m = -n;
+		cnt++;
 	}
 	else
 	{
@@ -89,9 +85,9 @@ int print_int(int n)
 	}
 
 	cnt = i;
-	for (; i >= 0; i--)
+	for (j = 0; j >= 0; j--)
 	{
-		_putchar(c[i]);
+		_putchar(c[j]);
 	}
 
 	return (cnt);

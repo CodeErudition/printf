@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <math.h>
 
 typedef unsigned int Uint;
 /* PROTOTYPES (_printf) */
