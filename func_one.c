@@ -25,6 +25,9 @@ int print_str(char *str)
 {
 	int j, cnt = 0;
 
+	if (str == NULL)
+		str = "(null)";
+
 	for (j = 0; str[j] != '\0'; j++)
 	{
 		_putchar(str[j]);
