@@ -7,8 +7,6 @@
  * @format: The format string containing format
  * specifiers.
  * @arg_list: The variable argument list.
- * @indx: The current index in the format string.
- * @char_cnt: The current character count.
  *
  * Return: None (void), but updates 'char_cnt' based
  * on the format specifier

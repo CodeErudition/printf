@@ -65,7 +65,7 @@ int print_hex(Uint n, int uppercase)
 }
 
 /**
- *  print_binary - Print an unsigned integer as
+ * print_binary - Print an unsigned integer as
  * a binary number.
  *
  * @n: The unsigned integer to be printed in binary.
