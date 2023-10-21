@@ -8,33 +8,75 @@
  *
  * Return: int (in this case the number of printed characters)
  */
-
+int _printf(const char *format, ...);
 int _printf(const char *format, ...)
 {
-	int indx = 0, char_cnt = 0;
-	va_list arg_list;
+	int char_cnt = 0;
+	char di_size[20], spec[] = {'%', 'c', 's', 'd', 'i', 'x', 'X', 'u', 'o', 'b'};
 
-	va_start(arg_list, format);
+	va_list sr_list;
 
-	if (!format)
+	if (format == NULL || format[0] == '\0')
 	{
-		va_end(arg_list);
 		return (-1);
 	}
-	else
+	va_start(sr_list, format);
+	while (*format)
 	{
-		while (format[indx])
+		if (*format == spec[0])
 		{
-			if (format[indx] == '%')
+			format++;
+			if (*format == '\0')
 			{
-				indx++;
-				conditions(format[indx], arg_list);
+				break;
+			}
+			if (*format == spec[1])
+			{
+				char_cnt += _putchar(va_arg(sr_list, int));
+			}
+			else if (*format == spec[2])
+			{
+				char *f_str = va_arg(sr_list, char *);
+
+				if (f_str == NULL)
+				{
+					write(1, "(null)", SR_NULL);
+					char_cnt += 6;
+				}
+				else
+				{
+					char_cnt += print_str(f_str);
+				}
+			}
+			else if (*format == spec[0])
+			{
+				write(1, format, 1);
+			}
+			else if (*format == spec[3] || *format == spec[4])
+			{
+				int digits = va_arg(sr_list, int);
+
+				snprintf(di_size, sizeof(di_size), "%d", digits);
+				write(1, di_size, strlen(di_size));
+				char_cnt += strlen(di_size);
 			}
 			else
-				char_cnt += _putchar(format[indx]);
-			indx++;
+			{
+				char un_spec[UNKNOWN];
+				int cus_spec = snprintf(un_spec, sizeof(un_spec), "%%%c", *format);
+
+				write(1, un_spec, cus_spec);
+				char_cnt += cus_spec;
+			}
 		}
+		else
+		{
+			char_cnt += write(1, format, 1);
+		}
+		format++;
 	}
-	va_end(arg_list);
+
+	va_end(sr_list);
 	return (char_cnt);
 }
+

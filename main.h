@@ -1,28 +1,20 @@
 #ifndef _MAIN_H
 
 #define _MAIN_H
-#define BUFFSIZE 1024
+#define SR_NULL 6
+#define UNKNOWN 7
 
 #include <stdarg.h>
+#include <stddef.h>
 #include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
-#include <math.h>
+#include <string.h>
 
-typedef unsigned int Uint;
 /* PROTOTYPES (_printf) */
 int _printf(const char *format, ...);
-int conditions(const char format, va_list arg_list);
-
 /* Custom putchar, puts and other functions */
 char _putchar(char c);
-int get_len(char *s);
-int print_char(int c);
 int print_str(char *str);
-int p_print(void);
-int print_int(int n);
-int print_binary(Uint n);
-int print_uint(Uint n);
-int print_octal(Uint n);
-int print_hex(Uint n, int uppercase);
 #endif
+
