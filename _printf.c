@@ -32,7 +32,10 @@ int _printf(const char *format, ...)
 			}
 			if (*format == spec[1])
 			{
-				char_cnt += _putchar(va_arg(sr_list, int));
+				char f_char = va_arg(sr_list, int);
+
+				write(1, &(f_char), 1);
+				char_cnt++;
 			}
 			else if (*format == spec[2])
 			{
